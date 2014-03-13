@@ -9,14 +9,14 @@ google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
 links:
   - name:         About me
     url:          /about
-  - name:         Blog
-    url:          http://muan.co
+  - name:         Weibo
+    url:          http://www.weibo.com/youngjd
     external:     true
-  - name:         Email
-    url:          mailto:hello@muan.co
+  - name:         ItEye
+    url:          http://youngjd.iteye.com/
     external:     true
   - name:         GitHub
-    url:          http://github.com/muan
+    url:          https://github.com/Humor-er
     external:     true
 pygments:         true
 permalink:        pretty
