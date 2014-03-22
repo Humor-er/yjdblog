@@ -1,43 +1,31 @@
-<link href='/stylesheets/metro-bootstrap.css' rel='stylesheet' type='text/css' >
-<link href='/stylesheets/metro-bootstrap-responsive.css' rel='stylesheet' type='text/css' >
-<link href='/stylesheets/iconFont.css' rel='stylesheet' type='text/css' >
-<link href='/stylesheets/docs.css' rel='stylesheet' type='text/css' >
-<link href='/javascripts/prettify/prettify.css' rel='stylesheet' type='text/css' >
+<!-- meta information -->
+<meta charset="utf-8">
+<meta name="description" {% if page.title == "Home" %}
+      content="{{ site.data.brume.description }}" {% else %}
+      content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" {% endif %}>
+<meta name="author" content="{{ site.data.brume.author }}">
 
-<!-- Load JavaScript Libraries -->
-<script src='/javascripts/jquery/jquery.min.js'></script>
-<script src='/javascripts/jquery/jquery.widget.min.js'></script>
-<script src='/javascripts/jquery/jquery.mousewheel.js'></script>
-<script src='/javascripts/prettify/prettify.js'></script>
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<!-- Metro UI CSS JavaScript plugins -->
-<script src='/javascripts/load-metro.js'></script>
+<!-- title -->
+<title>{{ page.title }} &middot; {{ site.data.brume.name }}</title>
 
-<!-- Local JavaScript -->
-<script src='/javascripts/docs.js'></script>
-<script src='/javascripts/github.info.js'></script>
-<script src='/javascripts/start-screen.js'></script>
+<!-- icons -->
+<link rel="shortcut icon" href="{{site.baseurl}}/public/images/favicon.ico" />
 
-<!-- - -->
-<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
-<meta content='text/html; charset=utf-8' http-equiv='content-type' />
-<meta content="http://muan.co/images/og.png" property="og:image" />
-<meta content="{{ site.facebook_appid }}" property="fb:app_id" />
-{% if page.date %}
-  <meta content='{{ site.url }}{{ page.url }}' property='og:url' />
-  <meta content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" property='og:description' />
-  <meta content="article" property="og:type" />
-{% else %}
-  <meta content='{{ site.url }}' property='og:url' />
-  <meta content="{{ site.description }}" property='og:description' />
-  <meta content="blog" property="og:type" />
+<!-- stylesheets -->
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/responsive.gs.12col.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/animate.min.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/main.css">
+
+<!-- Google fonts -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic&subset=latin-ext">
+
+{% if site.paginate %}
+<!-- font Awesome -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 {% endif %}
-<!-- - -->
-{% include ga.html %}
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=604714799556697";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- feed links -->
+<link rel="alternate" href="{{ site.baseurl }}/feed.xml" type="application/rss+xml" title="{{ site.name }}">
