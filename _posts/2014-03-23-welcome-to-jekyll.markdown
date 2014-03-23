@@ -37,7 +37,7 @@ f1g1ns2.dnspod.net
 ####11. 在blog根目录下建立文件CNAME,在文件中指定你的域名
 
 ```
-yougnjd.com
+youngjd.com
 ```
 
 ####12. 提交 
