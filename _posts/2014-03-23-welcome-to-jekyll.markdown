@@ -9,7 +9,7 @@ categories: jekyll update
 ####2. 在电脑上安装git
 ####3. 生成SSH Key
 
-```
+```bash
 $ ssh-keygen -t rsa -C "<youremail>"
 ```
 
