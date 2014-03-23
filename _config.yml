@@ -76,9 +76,9 @@ googleAnaly:
 
 #comment config
 disqus:
-  config: false
-  id: piznblog
+  config: true
+  id: youngjd
 
 duoshuo:
-  config: true
-  id: zhanxin
+  config: false
+  id: youngjd
