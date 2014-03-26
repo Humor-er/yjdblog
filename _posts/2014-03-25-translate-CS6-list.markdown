@@ -163,9 +163,8 @@ These constructors allow us to emulate Scheme's "cons" operation.
   ListNode l1 = new ListNode(7, new ListNode(0, new ListNode(6)));
 ```
 
-Linked lists vs. array lists
+Linked lists vs. array lists (链表 vs 数组)
 ----------------------------
-链表 vs 数组
 Linked lists have several advantages over array-based lists.  Inserting an item
 into the middle of a linked list takes just a small constant amount of time, if
 you already have a reference to the previous node (and don't have to walk
