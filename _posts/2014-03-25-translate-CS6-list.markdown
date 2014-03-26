@@ -320,7 +320,7 @@ SList's size (number of SListNodes).  Hence, the size can be determined more
 quickly than if the SListNodes had to be counted.
     
     另外一个好处是，SList类能够维护一个SList的大小(节点数)的属性。那么，当我们
-    需要知道链表的大小的时候，我们就能直接从SList类中直接获取到，而不不是还要去
+    需要知道链表的大小的时候，我们就能直接从SList类中直接获取到，而不是还要去
     遍历所有的节点才能统计出这个大小。
 
 
