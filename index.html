@@ -3,11 +3,11 @@ layout: default
 title: YoungJD's Blog
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+{% for post in site.posts %}
+<div id="content">
+  	<h1 class="title"><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h1>
+  	<div class="line"></div>
+     Here is content
+    <div id="footer"></div>
 </div>
+{% endfor %}
