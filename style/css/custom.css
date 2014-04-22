@@ -53,3 +53,7 @@ blockquote {
 .language-text {
 	color:white;
 }
+
+.language-bash {
+	color:green;
+}
