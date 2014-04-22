@@ -39,8 +39,15 @@ blockquote {
 	font-family: 'Open Sans','Helvetica Neue',Arial,"Hiragino Sans GB",sans-serif;
 }
 
-pre {
+.content-article pre {
 	background-color: black;
+	overflow-x: auto;
+	white-space: pre;
+	word-wrap: normal;
+}
+
+.content-article pre code {
+	white-space: pre;
 }
 
 .language-text {

@@ -83,14 +83,12 @@ to "car" and "cdr".  However, our node is an explicitly defined object.
 	(一个list的cdr就是这个list的除第一个元素以外的其余元素)函数。但是，节点又不同
 	于"car"和"cdr"，它是明确地被定义为对象而不是函数。
 
-  <br/>
-
 
 ```java
-  public class ListNode {          // ListNode is a recursive type
-    public int item;
-    public ListNode next;          // Here we're using ListNode before
-  }                                //   we've finished declaring it.
+public class ListNode {          // ListNode is a recursive type
+  public int item;
+  public ListNode next;          // Here we're using ListNode before
+}                                //   we've finished declaring it.
 ```
 
 Let's make some ListNodes.
@@ -98,10 +96,10 @@ Let's make some ListNodes.
 	先创建一些链表节点。
 
 ```java
-  ListNode l1 = new ListNode(), l2 = new ListNode(), l3 = new ListNode();
-  l1.item = 7;
-  l2.item = 0;
-  l3.item = 6;
+ListNode l1 = new ListNode(), l2 = new ListNode(), l3 = new ListNode();
+l1.item = 7;
+l2.item = 0;
+l3.item = 6;
 ```
 
   <br/>
@@ -119,10 +117,10 @@ Now let's link them together.
 
     然后再把它们链接起来。
 
-  ```java
-    l1.next = l2;
-    l2.next = l3;
-  ```
+```java
+l1.next = l2;
+l2.next = l3;
+```
 
 What about the last node?  We need a reference that doesn't reference anything.
 In Java, this is called "null".
@@ -130,40 +128,42 @@ In Java, this is called "null".
     最后一个节点是怎么处理的呢？一般我们会把最后一个节点的指向下一节点的引用不指向
     任何节点。在Java，我们称之为"null"。
 
-  ```java
-    l3.next = null;
-  ```
+```java
+l3.next = null;
+```
 
-       -------------         -------------         -------------
-       |     ----- |         |     ----- |         |     ----- |
-       | item| 7 | |         | item| 0 | |         | item| 6 | |
-  l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
-       |     ----- |         |     ----- |         |     ----- |
-       | next| .-+-+-------->| next| .-+-+-------->| next| X | |
-       |     ----- |         |     ----- |         |     ----- |
-       -------------         -------------         -------------
+  <br/>
+
+         -------------         -------------         -------------
+         |     ----- |         |     ----- |         |     ----- |
+         | item| 7 | |         | item| 0 | |         | item| 6 | |
+    l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
+         |     ----- |         |     ----- |         |     ----- |
+         | next| .-+-+-------->| next| .-+-+-------->| next| X | |
+         |     ----- |         |     ----- |         |     ----- |
+         -------------         -------------         -------------
 
 To simplify programming, let's add some constructors to the ListNode class.
 
     为了简化程序，我们可以在链表节点类中定义一些构造方法。
 
-  ```java
-  public ListNode(int i, ListNode n) {
-    item = i;
-    next = n;
-  }
+```java
+public ListNode(int i, ListNode n) {
+  item = i;
+  next = n;
+}
 
-  public ListNode(int i) {
-    this(i, null);
-  }
-  ```
+public ListNode(int i) {
+  this(i, null);
+}
+```
 
 These constructors allow us to emulate Scheme's "cons" operation.
 
     这些构造方法可以使得我们能够模仿Scheme的"cons"(用于构造列表的方法)函数。
 
 ```java
-  ListNode l1 = new ListNode(7, new ListNode(0, new ListNode(6)));
+ListNode l1 = new ListNode(7, new ListNode(0, new ListNode(6)));
 ```
 
 Linked lists vs. array lists (链表 vs 数组)
@@ -182,13 +182,13 @@ The following method inserts a new item into the list immediately after "this".
     
     下面的方法是在当前元素的下一个位置插入一个新元素。
 
-  ```java
-  public void insertAfter(int item) {
-    next = new ListNode(item, next);
-  }
+```java
+public void insertAfter(int item) {
+  next = new ListNode(item, next);
+}
 
-  l2.insertAfter(3);
-  ```
+l2.insertAfter(3);
+```
          -------------       -------------   -------------       -------------
          |     ----- |       |     ----- |   |     ----- |       |     ----- |
          | item| 7 | |       | item| 0 | |   | item| 3 | |       | item| 6 | |
@@ -225,10 +225,10 @@ declaring a reference of type Object.
     我们通常声明一个Object类型的引用作为节点的数据项属性。
 
 ```java
-  public class SListNode {
-    public Object item;
-    public SListNode next;
-  }
+public class SListNode {
+  public Object item;
+  public SListNode next;
+}
 ```
 
 The "S" in "SListNode" stands for singly-linked.  This will make sense when we
@@ -250,12 +250,13 @@ There are two problems with SListNodes.
     假设x和y是同时指向shopping链表的两个指针。假如我们在链表的起始位置插入一个
     新的元素的时候：
     
-  ```java
-   x = new SListNode("soap", x);
-  ```
-  <br>
-     y doesn't point to the new item; y still points to the second item in x's
-     list.  If y goes shopping for x, he'll forget to buy soap.
+```java
+ x = new SListNode("soap", x);
+```
+
+
+y doesn't point to the new item; y still points to the second item in x's
+list.  If y goes shopping for x, he'll forget to buy soap.
     
     y不是指向新的元素，而是仍然指向x链表中的第二个元素。那么当y帮x购买商品的时候，
     它将忘记买肥皂。(比喻当y遍历链表x的时候，将无法找到soap节点)
