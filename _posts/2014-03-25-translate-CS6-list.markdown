@@ -2,6 +2,9 @@
 layout: post
 title:  "翻译CS 61B Lecture 7 - 列表"
 date:   2014-03-25 22:53:49
+month:  "03"
+day:    25
+moto: “追求的终极永远是朦胧的，要逃避痛苦，最常见的就是躲进未来。在时间的轨道上，人们总想象有一条线，超脱了这条线，当前的痛苦也许就会永不复存在。” ---- 《米兰昆德拉》
 ---
 
                               CS 61B: Lecture 7
@@ -131,14 +134,14 @@ In Java, this is called "null".
     l3.next = null;
   ```
 
-         -------------         -------------         -------------
-         |     ----- |         |     ----- |         |     ----- |
-         | item| 7 | |         | item| 0 | |         | item| 6 | |
-    l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
-         |     ----- |         |     ----- |         |     ----- |
-         | next| .-+-+-------->| next| .-+-+-------->| next| X | |
-         |     ----- |         |     ----- |         |     ----- |
-         -------------         -------------         -------------
+       -------------         -------------         -------------
+       |     ----- |         |     ----- |         |     ----- |
+       | item| 7 | |         | item| 0 | |         | item| 6 | |
+  l1-->|     ----- |    l2-->|     ----- |    l3-->|     ----- |
+       |     ----- |         |     ----- |         |     ----- |
+       | next| .-+-+-------->| next| .-+-+-------->| next| X | |
+       |     ----- |         |     ----- |         |     ----- |
+       -------------         -------------         -------------
 
 To simplify programming, let's add some constructors to the ListNode class.
 
@@ -150,10 +153,10 @@ To simplify programming, let's add some constructors to the ListNode class.
     next = n;
   }
 
-public ListNode(int i) {
-  this(i, null);
-}
-```
+  public ListNode(int i) {
+    this(i, null);
+  }
+  ```
 
 These constructors allow us to emulate Scheme's "cons" operation.
 

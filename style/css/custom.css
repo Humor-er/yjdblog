@@ -1,0 +1,48 @@
+#sub-nav .social a {
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+border-radius: 50%;
+display: -moz-inline-stack;
+display: inline-block;
+vertical-align: middle;
+text-indent: -9999px;
+width: 28px;
+height: 28px;
+margin-right: 5px;
+-webkit-transition: 0.3s;
+-moz-transition: 0.3s;
+-o-transition: 0.3s;
+transition: 0.3s;
+}
+
+#sub-nav .social a.weibo {
+background: url('../img/ico/weibo.png') center no-repeat #e32529;
+border: 1px solid #E32529;
+}
+
+#sub-nav .social a.github {
+background: url('../img/ico/github.png') center no-repeat #afb6ca;
+}
+
+#sub-nav .social a.iteye {
+background: url('../img/ico/iteye.ico') center no-repeat #069;
+border: 1px solid #006699;
+}
+
+blockquote {
+	background: #F4F5F7 url(../img/blockquote.gif) 3px 3px no-repeat;
+	border: 1px dashed #CCC;
+	padding: 8px 12px 8px 36px;
+	margin: 5px 0;
+	font-family: 'Open Sans','Helvetica Neue',Arial,"Hiragino Sans GB",sans-serif;
+}
+
+pre {
+	background-color: black;
+}
+
+.language-text {
+	color:white;
+}

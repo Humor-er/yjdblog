@@ -4,10 +4,33 @@ title: YoungJD's Blog
 ---
 
 {% for post in site.posts %}
-<div id="content">
-  	<h1 class="title"><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></h1>
-  	<div class="line"></div>
-     Here is content
-    <div id="footer"></div>
+<div class="article well clearfix">		
+	<div class="data-article hidden-xs">
+		<span class="month">{{post.month}}月</span>
+		<span class="day">{{post.day}}</span>
+	</div>
+	<!-- 文章内容块 -->
+	<section>
+		<!-- 文章title -->
+		<div class="title-article">
+			<h1>
+				<a href="{{ post.url }}">
+				{{ post.title }}
+				</a>
+			</h1>
+		</div>
+		<!-- 文章title -->
+		
+		<div><blockquote>{{post.moto}}</blockquote></div>
+		<div class="content-article">					
+			<figure class="thumbnail">
+				<a href="#">
+					<img width="730" height="292" src="/style/img/car_10.jpg" class="attachment-730x300 wp-post-image" alt="#">
+				</a>
+			</figure>							
+			
+		</div>
+		<a class="btn btn-danger pull-right read-more" href="#" title="详细">阅读全文</a>
+	</section>
 </div>
 {% endfor %}

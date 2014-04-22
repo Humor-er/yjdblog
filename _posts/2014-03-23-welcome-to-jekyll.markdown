@@ -2,12 +2,15 @@
 layout: post
 title:  "在Github上创建自己的博客"
 date:   2014-03-23 12:19:49
+month:  "03"
+day:    23
 categories: jekyll update
+moto: “只有偏执狂才TM能成功” ---- 《米兰昆德拉》
 ---
 
-####1. 在<a href="https://github.com">Github</a>上注册一个账号
-####2. 在电脑上安装git
-####3. 生成SSH Key
+##1. 在<a href="https://github.com">Github</a>上注册一个账号
+##2. 在电脑上安装git
+##3. 生成SSH Key
 
 ```bash
 $ ssh-keygen -t rsa -C "<youremail>"
