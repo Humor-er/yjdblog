@@ -7,13 +7,9 @@ day:    25
 moto: “追求的终极永远是朦胧的，要逃避痛苦，最常见的就是躲进未来。在时间的轨道上，人们总想象有一条线，超脱了这条线，当前的痛苦也许就会永不复存在。” ---- 《米兰昆德拉》
 ---
 
-                              CS 61B: Lecture 7
-                         Wednesday, February 5, 2014
+----------------------------
+####**LISTS**
 
-Today's reading:  Goodrich & Tamassia, Section 3.2.
-
-LISTS
-=====
 Let's consider two different data structures for storing a list of things:
 an array and a linked list.
 
@@ -37,9 +33,6 @@ and move all the ints from the old array to the new one.
 
 	第二，一个数组通常是有一个固定大小。如果我们想增加元素到列表中，但是数组已经满了，我们就
 	必须分配一个全新的数组，并把所有的数据从旧的数组搬到新的数组中。
-
-  <br />
-
 
 ```java
 public class AList {
@@ -69,9 +62,9 @@ public class AList {
   }
 }
 ```
+----------------------------
 
-LINKED LISTS (a recursive data type) (一种递归式的数据类型)
-============
+####**LINKED LISTS (a recursive data type) (一种递归式的数据类型)**
 We can avoid these problems by choosing a Scheme-like representation of lists.
 A linked list is made up of _nodes_.  Each node has two components:  an item,
 and a reference to the next node in the list.  These components are analogous
@@ -101,9 +94,6 @@ l1.item = 7;
 l2.item = 0;
 l3.item = 6;
 ```
-
-  <br/>
-
 	       -------------         -------------         -------------
 	       |     ----- |         |     ----- |         |     ----- |
 	       | item| 7 | |         | item| 0 | |         | item| 6 | |
@@ -131,9 +121,6 @@ In Java, this is called "null".
 ```java
 l3.next = null;
 ```
-
-  <br/>
-
          -------------         -------------         -------------
          |     ----- |         |     ----- |         |     ----- |
          | item| 7 | |         | item| 0 | |         | item| 6 | |
@@ -165,9 +152,10 @@ These constructors allow us to emulate Scheme's "cons" operation.
 ```java
 ListNode l1 = new ListNode(7, new ListNode(0, new ListNode(6)));
 ```
-
-Linked lists vs. array lists (链表 vs 数组)
 ----------------------------
+
+####**Linked lists vs. array lists (链表 vs 数组)**
+
 Linked lists have several advantages over array-based lists.  Inserting an item
 into the middle of a linked list takes just a small constant amount of time, if
 you already have a reference to the previous node (and don't have to walk
@@ -214,9 +202,10 @@ insertions (like linked lists).
     
     我们将要学习的许多数据结构都将去尝试结合从数组和链表两者，得出一个折中的方案。
     既能做到快速的随机查询(像数组一样)，也能做到快速的随机插入(像链表一样)。
-
-Lists of Objects
 ----------------
+
+####**Lists of Objects**
+
 For greater generality, let's change ListNodes so that each node contains not
 an int, but a reference to any Java object.  In Java, we can accomplish this by
 declaring a reference of type Object.
@@ -237,9 +226,10 @@ class in next week's lab and homework.
 
     "SListNode"中的"S"代表的是单向的链表。当我们把这种类型的链表与双向链表对比的
     时候就会看到它的意义。我们将在下星期的每周实验和家庭作业中看到这样的对比。
-
-A List Class
 ------------
+
+####**A List Class**
+
 There are two problems with SListNodes.
 
     单向链表存在两个问题。
